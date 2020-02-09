@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta  charset="utf-8">
+        <link rel='stylesheet' href={% static 'css/common.css' %}
+        <title> My test page</title>
+    </head>
+    <body>
+        <h1>Forms</h1>
+        <form method="POST">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" name="Submit" value="submit">
+        </form>
+    </body>

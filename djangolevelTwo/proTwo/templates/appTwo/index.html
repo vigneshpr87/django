@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta  charset="utf-8">
+        <link rel='stylesheet' href={% static 'css/common.css' %}
+        <title> My test page</title>
+    </head>
+    <body>
+        <h1>Hello welcome my testing page</h1>
+        Go To /user pages
+
+        <h2>Access List</h2>
+
+        {% if userdetails %}
+            <table>
+                <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </thead>
+                {% for ud in userdetails %}
+                <tr>
+                    <td>{{ ud.first_name }}</td>
+                    <td>{{ ud.last_name }}</td>
+                    <td>{{ ud.email}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No access</p>
+        {% endif %}
+
+    </body>
